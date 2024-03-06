@@ -1,0 +1,46 @@
+{
+  "name": "@jimmychu0807/guess-the-mean",
+  "author": "Jimmy Chu <jimmychu0807@gmail.com>",
+  "version": "0.0.0",
+  "description": "Guess the Mean dApp Game",
+  "license": "MIT",
+  "keywords": [
+    "cryptography"
+  ],
+  "homepage": "https://github.com/jimmychu0807/guess-the-mean",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jimmychu0807/guess-the-mean.git"
+  },
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "fmt": "prettier --write .",
+    "lint": "eslint .",
+    "clean": "pnpm --filter \"*\" clean",
+    "build": "pnpm --filter @jimmychu0807/coursera-crypto-wk01 build && pnpm --filter=!@jimmychu0807/coursera-crypto-wk01 build",
+    "test": "pnpm --filter \"*\" test",
+    "validate": "pnpm lint && pnpm build && pnpm test",
+    "ci:publish": "pnpm publish -r"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^17.7.2",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx}": "eslint --fix",
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
